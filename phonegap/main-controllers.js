@@ -80,13 +80,14 @@ sampleControllers.controller('chatCtrl', function ($scope, $route) {
   };
 
   $scope.$watch('appCtrlState.isReady', function() {
-    $scope.registerForPush();
+    if ($scope.appCtrlState.pushRegistrationId) $scope.registerForPush();
   });
+
   $scope.registerForPush = function() {
     $scope.appCtrlState.client.registerAndroidPushToken({
       token: $scope.appCtrlState.pushRegistrationId,
       deviceId: window.device.uuid,
-      senderId: 'YOUR-SENDER-ID'
+      senderId: String(SENDERID)
     }, function(err) {
       if (err) console.error('Error registering for Push Notifications with Layer:', err);
       else console.log('Push Notifications registered on Layer Servers');
@@ -96,7 +97,7 @@ sampleControllers.controller('chatCtrl', function ($scope, $route) {
   document.addEventListener('deviceready', function() {
     var push = PushNotification.init({
       android: {
-        senderID: 'YOUR-SENDER-ID',
+        senderID: String(SENDERID),
         vibrate: true
       }
     });

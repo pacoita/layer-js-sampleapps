@@ -2,10 +2,21 @@
 
 This sample app takes the existing AngularJS Sample App and updates it to work with Cordova.
 
-Demo is done using Android.  Additional code is needed for IOS support.
+Demo is done using Android.  Additional work may be needed for IOS support.
 
 Demo is done using phonegap rather than cordova; it should be possible to replace every place where there is a `phonegap` command with a
 `cordova` command.
+
+## How to Run the Sample
+
+1. Run: sudo npm install phonegap -g
+2. Lookup your Google Project SENDER_ID from https://console.cloud.google.com/home/dashboard
+    * Make sure that you have enabled push notifications on https://console.cloud.google.com/home/dashboard
+    * Make sure to log into the Layer Developer Dashboard, Select your App, and select `Push`, and enter your Android push settings.
+3. Build the project with `npm run build -- MY-SENDER-ID`; this generates your `www` folder.
+4. Configure the phonegap plugin to use your SENDER ID: `phonegap plugin add phonegap-plugin-push --variable  SENDER_ID="YOUR_SENDER_ID"`
+5. Run: phonegap run android
+
 
 ## How to Build a Phonegap/Cordova App
 
@@ -74,12 +85,3 @@ The following steps explain the process used to do this; you should be able to f
     * Removed all use of Locations and routers.  While location works in a WebView container, it does not feel like the right approach for triggering logic and Views, where locations can be shared, reloaded, etc.
     * Added `<preference name="orientation" value="landscape" />` because frankly, the AngularJS Sample App isn't very mobile friendly, and this orientation works better.
 
-## How to Run the Sample
-
-1. Run: sudo npm install phonegap -g
-2. Open up phonegap/www/app/main-controller.js and replace MY-SENDER-ID with your project number/SENDER_ID from https://console.cloud.google.com/home/dashboard
-3. Run: phonegap plugin add phonegap-plugin-push --variable  SENDER_ID="YOUR_SENDER_ID"
-    * Get your SENDER_ID from https://console.cloud.google.com/home/dashboard
-    * Make sure that you have enabled push notifications on https://console.cloud.google.com/home/dashboard
-    * Make sure to log into the Layer Developer Dashboard, Select your App, and select `Push`, and enter your Android push settings.
-4. Run: phonegap run android
