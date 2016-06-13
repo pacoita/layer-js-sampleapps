@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "description": "Angularjs PhoneGap chat UI example using Layer SDK",
   "scripts": {
-      "build": "rm -rf www; cp -r ../angular www; cp main-controllers.js www/app/; cp index.html www; cp -r img www; echo 'var SENDERID =' > www/config.js"
-  } 
+      "build": "rm -rf www; cp -r ../angular www; cp init-cordova.js www; cp index.html www; cp -r img www; echo 'var SENDERID =' > www/config.js"
+  }
 }

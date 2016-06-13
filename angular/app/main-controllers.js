@@ -45,6 +45,7 @@ sampleControllers.controller('appCtrl', function ($scope) {
     $scope.appCtrlState.client = new layer.Client({
       appId: window.layerSample.appId
     });
+    initCordovaPush($scope.appCtrlState.client, $scope);
 
     /**
      * Client authentication challenge.
@@ -200,3 +201,5 @@ sampleControllers.controller('conversationListCtrl', function ($scope, $rootScop
     }
   };
 });
+
+window.initCordovaPush = function(client, scope) {};
