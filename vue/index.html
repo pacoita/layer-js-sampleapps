@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Layer Vue example</title>
+  <meta name="description" content="Layer Vue example">
+  <meta name="author" content="Nil Gradisnik">
+
+  <link rel="shortcut icon" href="http://static.layer.com/web/favicon.png">
+
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet" type="text/css">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Common CSS and Identity dialog -->
+  <link href="common/style.css" rel="stylesheet">
+  <script src="common/layerSample.js"></script>
+
+  <!-- Layer Web SDK -->
+  <script src='http://cdn.layer.com/sdk/2.0.0-beta/layer-websdk.min.js'></script>
+</head>
+<body>
+  <div class="main-app">
+    <div class="messenger">
+      <div class="left-panel">
+        <conversations></conversations>
+      </div>
+      <div class="right-panel">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vue build -->
+  <script src="dist/build.js"></script>
+</body>
+</html>
